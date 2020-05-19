@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+// import {TodoList,AddTodo,Show} from "./components/index";
+import TodoList from "./components/TodoList";
+import AddTodo from "./components/AddTodo";
+import Show from "./components/Show";
+import { createStore } from "redux";
+
+// react-redux 提供两个东西 Provider 和 connect。
+import { Provider } from "react-redux";
+import combineReducers from "./reducers";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={createStore(combineReducers)}>
+      <AddTodo />
+      <TodoList />
+      <Show />
+    </Provider>
   );
 }
 
