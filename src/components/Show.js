@@ -4,7 +4,7 @@ import {setVisiableFilter, FilterType} from '../action/FilterAction'
 
 class Show extends PureComponent {
     completed = () => {
-        // this.props.setVisiableFilter(FilterType.Completed)
+        //或者 this.props.setVisiableFilter(FilterType.Completed)
         this.props.dispatch(setVisiableFilter(FilterType.Completed))
     }
 
@@ -22,11 +22,11 @@ class Show extends PureComponent {
                 Show: 
                 <button onClick={this.all}>All</button>
                 <button onClick={this.active}>Active</button>
-                {/* <button onClick={this.props.setVisiableFilter.bind(this, FilterType.Completed)}>Completed</button> */}
+                {/* 或者 <button onClick={this.props.setVisiableFilter.bind(this, FilterType.Completed)}>Completed</button> */}
             </div>
         )
     }
 }
 
 export default connect()(Show);
-// export default connect(null, {setVisiableFilter})(Show);
+//或者 export default connect(null, {setVisiableFilter})(Show);
